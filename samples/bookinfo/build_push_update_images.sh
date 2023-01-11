@@ -111,18 +111,7 @@ do
   	echo "Pushing: ${IMAGE}"
   	docker push "${IMAGE}";
   fi
-
-  # $IMAGE has the following format: istio/examples-bookinfo*:"$v".
-  # We want to get the sample app name from $IMAGE (the examples-bookinfo* portion)
-  # to create the file to store the results of the scan for that image. The first
-  # part of the $IMAGE_NAME gets examples-bookinfo*:"$v", and the second part gets
-  # 'examples-bookinfo*'.
-  if [[ "$ENABLE_IMAGE_SCAN" == "true"  ]]; then
-  	echo "Scanning ${IMAGE} for security vulnerabilities"
-  	IMAGE_NAME=${IMAGE#*/}
-  	IMAGE_NAME=${IMAGE_NAME%:*}
-  	run_vulnerability_scanning "${IMAGE_NAME}" "${IMAGE}"
-  fi
+  
 done
 
 # Update image references in the yaml files
