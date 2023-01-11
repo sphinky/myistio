@@ -8,3 +8,8 @@ steps:
     name: "Build app"
     command: |
       ls -al
+      
+outputArtifacts:
+  - name: book-info-docker-images
+    type: DOCKER_IMAGE
+    location: build-service-demo
