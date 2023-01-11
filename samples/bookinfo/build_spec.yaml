@@ -7,7 +7,7 @@ steps:
   - type: Command
     name: "Build app"
     command: |
-      /samples/bookinfo/build_push_update_images.sh 20 --prefix ocism && ls -al
+      ./samples/bookinfo/build_push_update_images.sh 20 --prefix ocism && ls -al
       
 outputArtifacts:
   - name: book-info-docker-images
