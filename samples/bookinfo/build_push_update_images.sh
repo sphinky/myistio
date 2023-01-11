@@ -69,7 +69,7 @@ do
 done
 
 # Build docker images
-ENABLE_MULTIARCH_IMAGES="${ENABLE_MULTIARCH_IMAGES}" src/build-services.sh "${VERSION}" "${PREFIX}"
+ENABLE_MULTIARCH_IMAGES="${ENABLE_MULTIARCH_IMAGES}" ./samples/bookinfo/src/build-services.sh "${VERSION}" "${PREFIX}"
 
 # Currently the `--load` argument does not work for multi arch images
 # Remove this once https://github.com/docker/buildx/issues/59 is addressed.
