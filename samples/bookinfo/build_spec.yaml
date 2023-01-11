@@ -7,4 +7,4 @@ steps:
   - type: Command
     name: "Build app"
     command: |
-      echo 'fuck all'
+      echo "fuck all"
